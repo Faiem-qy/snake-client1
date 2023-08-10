@@ -6,6 +6,12 @@ const connect = function() {
     port: 50541, // Port number here
   });
 
+  conn.on("connect", () => {
+    console.log("Successfully connected to the game server");
+    console.log("Name:FQY");
+  });
+
+
   //using conn obj tp handle messages from the server
   conn.on("data", () => {
     console.log("you ded cuz you idled");
@@ -19,4 +25,4 @@ const connect = function() {
 
 console.log("Connecting...");
 connect();
-module.exports = {connect}
+module.exports = { connect };
