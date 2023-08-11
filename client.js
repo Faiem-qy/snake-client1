@@ -1,13 +1,14 @@
-
 const net = require("net");
+
+const { IP, PORT } = require('./constants');
 
 const connect = function() {
   const conn = net.createConnection({
-    host: "localhost",// IP address here
-    port: 50541, // Port number here
+    host: IP,// IP address here
+    port: PORT, // Port number here
   });
 
-  conn.on("connect", () => {
+  conn.on("connect", () => {// log messages when connected
     console.log("Successfully connected to the game server");
     console.log("Name:FQY");
     // setInterval(() => {
