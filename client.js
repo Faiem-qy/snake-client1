@@ -1,4 +1,4 @@
-const { write } = require("fs");
+
 const net = require("net");
 
 const connect = function() {
@@ -10,9 +10,9 @@ const connect = function() {
   conn.on("connect", () => {
     console.log("Successfully connected to the game server");
     console.log("Name:FQY");
-    setInterval(() => {
-      // conn.write('Move: up');
-    }, 100);
+    // setInterval(() => {
+    //   // conn.write('Move: up');
+    // }, 100);
   });
 
 

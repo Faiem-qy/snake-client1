@@ -1,9 +1,14 @@
-const setupInput = function() {
+const { write } = require("fs");
+
+let connection; // stores the active TCP connection
+
+const setupInput = function(conn) {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
   stdin.resume();
-  stdin.on("data", (key) => handleUserInput (key));// event listener 
+  stdin.on("data", (key) => handleUserInput(key));// event listener 
   return stdin;
 };
 
@@ -12,8 +17,23 @@ const handleUserInput = function(key) {
     console.log('exiting...');
     process.exit();
   }
+  if (key === 'w') {
+    console.log("Moved up");
+    connection.write('Move: up');
+  }
+  if (key === 'a') {
+    console.log("Moved left");
+    connection.write('Move: left');
+  }
+  if (key === 's') {
+    console.log("Moved down");
+    connection.write('Move: down');
+  }
+  if (key === 'd') {
+    console.log("Moved right");
+    connection.write('Move: right');
+  }
+
 };
 
-setupInput()
-
-module.exports = {setupInput}
+module.exports = { setupInput };
