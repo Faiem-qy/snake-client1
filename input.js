@@ -33,7 +33,15 @@ const handleUserInput = function(key) {
     console.log("Moved right");
     connection.write('Move: right');
   }
-
+  if (key === '1') {
+    connection.write("Say: 🍴");
+  }
+  if (key === '2') {
+    connection.write("Say: so hungry 😋");
+  }
+  if (key === '3') {
+    connection.write("Say: 🍎🍏🍎  Keep those comming❗❗❗");
+  }
 };
 
 module.exports = { setupInput };
