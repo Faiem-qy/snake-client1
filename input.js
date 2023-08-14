@@ -45,6 +45,14 @@ const handleUserInput = function(key) {
   }
 };
 
+
+
+
+
+
+
+
+//alternate
 /*
 const keyToMessage = {
   w: 'Move: up',

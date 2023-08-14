@@ -11,9 +11,6 @@ const connect = function() {
   conn.on("connect", () => {// log messages when connected
     console.log("Successfully connected to the game server");
     console.log("Name:FQY");
-    // setInterval(() => {
-    //   // conn.write('Move: up');
-    // }, 100);
   });
 
 
